@@ -21,7 +21,7 @@ public class Consola {
            ListaProductos[i] = new Perecedero();
            ListaProductos[i].setNombre("producto perecedero "+(i+1));
            ListaProductos[i].setPrecio(Math.random()*100000+5000);
-           System.out.println("\nEl precio total del" + ListaProductos[i].getNombre()+" es: "+df.format(ListaProductos[i].Calcular(2))+"$ pesos");
+           System.out.println("\nEl precio total del " + ListaProductos[i].getNombre()+" es: "+df.format(ListaProductos[i].Calcular(2))+"$ pesos");
        }
        
        System.out.println("\n--------- PRODUCTOS NO PERECEDEROS ---------");
@@ -30,7 +30,7 @@ public class Consola {
            ListaProductosN[i]=new Nperecedero();
            ListaProductosN[i].setNombre("producto no perecedero "+(i+1));
            ListaProductosN[i].setPrecio(Math.random()*100000+5000);
-           System.out.println("\nEl precio total del" + ListaProductosN[i].getNombre()+" es: "+df.format(ListaProductosN[i].Calcular(2))+"$ pesos");
+           System.out.println("\nEl precio total del " + ListaProductosN[i].getNombre()+" es: "+df.format(ListaProductosN[i].Calcular(2))+"$ pesos");
        }
 
     }
