@@ -2,12 +2,13 @@ package modelo;
 
 import java.text.ParseException;
 
-public class Producto {
+public abstract class Producto {
     protected String nombre;
     protected double precio;
 
     public Producto() {
         this.precio = 5000;
+        this.nombre = "Producto ";
     }
 
     public Producto(String nombre, double precio) {
@@ -31,8 +32,6 @@ public class Producto {
         this.precio = precio;
     }
     
-    public double Calcular(int numero)throws ParseException{
-        return 0;
-    }
+    public abstract double Calcular(int numero)throws ParseException;
     
 }

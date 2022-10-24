@@ -57,23 +57,29 @@ public class Perecedero extends Producto{
     //El error esta en este metodo
     public double Calcular(int numero) throws ParseException {
         
-        SimpleDateFormat fecha = new SimpleDateFormat("dd/mm/yyyy");
+        SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
+        
+        
         Calendar calendario = Calendar.getInstance();
         Date fActual = calendario.getTime();
- 
-        String fechaActual = fecha.format(fActual);
-        Date fechahoy = fecha.parse(fechaActual);
-        Date fechav = fecha.parse(this.fCaducacion);
+
+        //String fechaActual = fecha.format(fActual);
+        //System.out.println(fechaActual);
         
-        long calc = fechahoy.getTime()-fechav.getTime();
+        //Date fechahoy = fecha.parse(fechaActual);
+        
+        //System.out.println(fechahoy);
+        Date fechav = fecha.parse(this.fCaducacion);
+        long calc = fechav.getTime()-fActual.getTime();
+        
         TimeUnit unidad = TimeUnit.DAYS;
         this.dias = (int)unidad.convert(calc, TimeUnit.MILLISECONDS);
-        
+
         super.precio = (numero*super.precio);
         
         switch(this.dias){
          case 1:
-               super.precio=(super.precio/4);
+             super.precio=(super.precio/4);
              break;
          case 2:
              super.precio=(super.precio/3);
@@ -84,7 +90,8 @@ public class Perecedero extends Producto{
          default:
              break;
              
-        }  
+        } 
+        
 
         return super.precio;
     }

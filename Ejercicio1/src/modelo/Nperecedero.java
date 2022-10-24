@@ -24,7 +24,6 @@ public class Nperecedero extends Producto{
         super.precio =super.precio+(super.precio*this.iva);
         
         return super.precio;
-        
     }
     
  
